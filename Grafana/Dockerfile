@@ -54,6 +54,7 @@ RUN apt-get update -y && apt-get install -y \
  && make deps-go \
  && make build-go \
 # Install yarn
+ && npm -v
  && npm ci -g yarn \
  && yarn upgrade \
  && npm ci -g react \
