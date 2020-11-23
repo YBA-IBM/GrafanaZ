@@ -54,13 +54,13 @@ RUN apt-get update -y && apt-get install -y \
  && make deps-go \
  && make build-go \
 # Install yarn
- && npm install -g yarn \
+ && npm ci -g yarn \
  && yarn upgrade \
- && npm install -g react \
- && npm install -g --save-dev @babel/core @babel/node \
- && npm install -g --save-dev @babel/preset-env \
+ && npm ci -g react \
+ && npm ci -g --save-dev @babel/core @babel/node \
+ && npm ci -g --save-dev @babel/preset-env \
  && echo "DEBUG LINE 0" \
- && npm install --save-dev @babel/plugin-proposal-class-properties \
+# && npm install --save-dev @babel/plugin-proposal-class-properties \
 # Build Grafana-image-renderer
  && cd $GOPATH/src/github.com/grafana \
  && git clone https://github.com/grafana/grafana-image-renderer.git \
