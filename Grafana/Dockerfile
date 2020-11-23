@@ -56,12 +56,13 @@ RUN apt-get update -y && apt-get install -y \
 # Install yarn
  && echo "DEBUG LINE 0" \
  && ls /usr/local/ \
+ && ls /usr/local/node-v14.15.1-linux-s390x \
  && npm -v \
- && npm ci -g yarn \
+ && npm install -g yarn \
  && yarn upgrade \
- && npm ci -g react \
- && npm ci -g --save-dev @babel/core @babel/node \
- && npm ci -g --save-dev @babel/preset-env \
+ #&& npm ci -g react \
+ #&& npm ci -g --save-dev @babel/core @babel/node \
+ #&& npm ci -g --save-dev @babel/preset-env \
  && echo "DEBUG LINE 1" \
 # && npm install --save-dev @babel/plugin-proposal-class-properties \
 # Build Grafana-image-renderer
