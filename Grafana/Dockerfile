@@ -27,7 +27,7 @@ ARG GRAFANA_VER=7.0.5
 LABEL maintainer="LoZ Open Source Ecosystem (https://www.ibm.com/community/z/usergroups/opensource)"
 
 ENV GOPATH=/opt
-ENV PATH=$PATH:/usr/local/node-v14.15.1-linux-s390x/bin:/usr/local/go/bin:/usr/share/grafana/bin/linux-s390x
+ENV PATH=$PATH:/usr/local/node-v12.9.1-linux-s390x/bin:/usr/local/go/bin:/usr/share/grafana/bin/linux-s390x
 
 # Install dependencies
 RUN apt-get update -y && apt-get install -y \
@@ -45,7 +45,7 @@ RUN apt-get update -y && apt-get install -y \
  && tar -C /usr/local -xzf go1.14.4.linux-s390x.tar.gz \
 # Install Nodejs
  && cd $GOPATH \
- && wget https://nodejs.org/dist/v14.15.1/node-v14.15.1-linux-s390x.tar.xz  \
+ && wget https://nodejs.org/dist/v14.15.1/node-v12.9.1-linux-s390x.tar.xz  \
  && chmod ugo+r node-v14.15.1-linux-s390x.tar.xz \
  && tar -C /usr/local -xf node-v14.15.1-linux-s390x.tar.xz \
 # Get the Grafana Soure code and build Grafana backend
@@ -56,7 +56,7 @@ RUN apt-get update -y && apt-get install -y \
 # Install yarn
  && echo "DEBUG LINE 0" \
  && ls /usr/local/ \
- && ls /usr/local/node-v14.15.1-linux-s390x \
+ && ls /usr/local/node-v12.9.1-linux-s390x \
  && npm -v \
  && npm install -g yarn \
  && yarn upgrade \
