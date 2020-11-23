@@ -61,7 +61,7 @@ RUN apt-get update -y && apt-get install -y \
  && npm install -g yarn \
  && yarn upgrade \
  && echo "DEBUG LINE 1" \
- && npm install -g --save-dev @babel/core
+ && npm install -g --save-dev @babel/core \
  && npm i -g --save-dev @babel/plugin-proposal-class-properties \
 # Build Grafana-image-renderer
  && cd $GOPATH/src/github.com/grafana \
