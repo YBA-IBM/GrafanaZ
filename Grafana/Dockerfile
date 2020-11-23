@@ -27,7 +27,7 @@ ARG GRAFANA_VER=7.0.5
 LABEL maintainer="LoZ Open Source Ecosystem (https://www.ibm.com/community/z/usergroups/opensource)"
 
 ENV GOPATH=/opt
-ENV PATH=$PATH:/usr/local/node-v14.5.1-linux-s390x/bin:/usr/local/go/bin:/usr/share/grafana/bin/linux-s390x
+ENV PATH=$PATH:/usr/local/node-v14.15.1-linux-s390x/bin:/usr/local/go/bin:/usr/share/grafana/bin/linux-s390x
 
 # Install dependencies
 RUN apt-get update -y && apt-get install -y \
