@@ -27,7 +27,7 @@ ARG GRAFANA_VER=7.0.5
 LABEL maintainer="LoZ Open Source Ecosystem (https://www.ibm.com/community/z/usergroups/opensource)"
 
 ENV GOPATH=/opt
-ENV PATH=$PATH:/usr/local/node-v12.18.2-linux-s390x/bin:/usr/local/go/bin:/usr/share/grafana/bin/linux-s390x
+ENV PATH=$PATH:/usr/local/node-v14.5.1-linux-s390x/bin:/usr/local/go/bin:/usr/share/grafana/bin/linux-s390x
 
 # Install dependencies
 RUN apt-get update -y && apt-get install -y \
@@ -45,9 +45,9 @@ RUN apt-get update -y && apt-get install -y \
  && tar -C /usr/local -xzf go1.14.4.linux-s390x.tar.gz \
 # Install Nodejs
  && cd $GOPATH \
- && wget https://nodejs.org/dist/v12.18.2/node-v12.18.2-linux-s390x.tar.xz \
- && chmod ugo+r node-v12.18.2-linux-s390x.tar.xz \
- && tar -C /usr/local -xf node-v12.18.2-linux-s390x.tar.xz \
+ && wget https://nodejs.org/dist/v14.15.1/node-v14.15.1-linux-s390x.tar.xz  \
+ && chmod ugo+r node-v14.15.1-linux-s390x.tar.xz \
+ && tar -C /usr/local -xf node-v14.15.1-linux-s390x.tar.xz \
 # Get the Grafana Soure code and build Grafana backend
  && git clone https://github.com/grafana/grafana.git $GOPATH/src/github.com/grafana/grafana \
  && cd $GOPATH/src/github.com/grafana/grafana && git checkout v${GRAFANA_VER} \
@@ -90,7 +90,7 @@ ENV BASE=/opt/src/github.com/grafana
 ENV PATH=$PATH:/usr/share/nodejs/bin
 
 COPY --from=builder /root/startup_script.sh                   /root/startup_script.sh
-COPY --from=builder /usr/local/node-v12.18.2-linux-s390x/     /usr/share/nodejs
+COPY --from=builder /usr/local/node-v14.15.1-linux-s390x/     /usr/share/nodejs
 COPY --from=builder $BASE/grafana/public/              /usr/share/grafana/public/
 COPY --from=builder $BASE/grafana/conf/                /usr/share/grafana/conf/
 COPY --from=builder $BASE/grafana-image-renderer/      /usr/share/grafana-image-renderer/
