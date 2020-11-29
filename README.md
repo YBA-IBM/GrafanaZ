@@ -1,7 +1,7 @@
 # GrafanaZ
 
 # Tags:
- -['7.0.5'](https://github.com/YBA-IBM/GrafanaZ/blob/main/Grafana/Dockerfile)
+ - [`7.0.5`](https://github.com/YBA-IBM/GrafanaZ/blob/main/Grafana/Dockerfile)
  
 # Running your Grafana container
 
